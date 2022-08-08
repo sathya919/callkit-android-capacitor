@@ -1,10 +1,14 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { callkitPlugin } from './definitions';
+import type { CallKitVoipPlugin } from './definitions';
 
-export class callkitWeb extends WebPlugin implements callkitPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+export class CallKitVoipWeb extends WebPlugin implements CallKitVoipPlugin {
+  async register(): Promise<void> {
+    return;
+  }
+
+  async incomingCall({from}:{from:string}):Promise<void>{
+    console.log(from)
+    return;
   }
 }
